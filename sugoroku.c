@@ -73,26 +73,27 @@ void game()
 
 	system("clear");
 
+	//ÉSÅ[ÉãÇ∑ÇÈÇ‹Ç≈ÉãÅ[Év
 	while (flag != TRUE) {
-		dice(p, entry);
-		for (i = 0; i < entry; i++) {
-			for (dice_num = p[i].dice_num; dice_num > 0; dice_num--) {
-				printf("Payer%d Turn\n", i+1);
-				printf("Your remainig num : %d\n",dice_num);
-				field_disp(field);
-				flag = walk(p,field,i);
-				system("clear");
-				if (flag == TRUE) {
-					printf("Player%d WIN!!!!!\n", i + 1);
-					break;
-				}
-			}
-			if (flag == TRUE) {
-				break;
-			}
-		}
+	  dice(p, entry);
+	  for (i = 0; i < entry; i++) {
+	    for (dice_num = p[i].dice_num; dice_num > 0; dice_num--) {
+	      printf("Payer%d Turn\n", i+1);
+	      printf("Your remainig num : %d\n",dice_num);
+	      field_disp(field);
+	      flag = walk(p,field,i);
+	      system("clear");
+	      if (flag == TRUE) {
+		printf("Player%d WIN!!!!!\n", i + 1);
+		break;
+	      }
+	    }
+	    if (flag == TRUE) {
+	      break;
+	    }
+	  }
 	}
-
+	
 }
 
 void p_init(player p[])
