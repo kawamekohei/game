@@ -76,7 +76,9 @@ void game()
 	//ゴールするまでループ
 	while (flag != TRUE) {
 	  dice(p, entry);
+	  //参加プレイヤーの数だけループ
 	  for (i = 0; i < entry; i++) {
+	    //ダイスの数だけループ（プレイヤー移動中）
 	    for (dice_num = p[i].dice_num; dice_num > 0; dice_num--) {
 	      printf("Payer%d Turn\n", i+1);
 	      printf("Your remainig num : %d\n",dice_num);
@@ -112,7 +114,7 @@ void p_init(player p[])
 
 	}
 
-	//Position Shufful
+	//Player Position Shufful
 	for (i = 0; i < MAX; i++) {
 		r1 = rand() % 4;
 		r2 = rand() % 4;
@@ -131,7 +133,7 @@ void f_init(int field[][WIDTH], player p[], int entry)
 			field[i][j] = EMPTY;
 		}
 	}
-
+	//Wall set
 	for (i = 1; i < HIEGHT-1; i++) {
 		if (i % 2 == 0) {
 			for (j = 0; j < rand() % 3 + 1; j++) {
@@ -139,11 +141,11 @@ void f_init(int field[][WIDTH], player p[], int entry)
 			}
 		}
 	}
-
+	//Player set
 	for (i = 0; i < entry; i++) {
 		field[p[i].y][p[i].x] = p[i].num;
 	}
-
+	//Goal set
 	field[HIEGHT-1][rand() % 4] = GOAL;
 }
 
