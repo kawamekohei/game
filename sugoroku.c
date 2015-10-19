@@ -5,17 +5,17 @@
 
 #define TRUE 1
 #define FALSE 0
+//Field size
 #define WIDTH 4
 #define HIEGHT 20
+//player num
 #define MAX 4
-
 //Field States
 #define EMPTY 0
 #define GOAL -1
 #define WALL -2
 //Player States
 #define DOUBLE 1
-
 
 typedef struct {
   int num;
